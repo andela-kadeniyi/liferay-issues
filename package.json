@@ -36,7 +36,5 @@
     "react-addons-shallow-compare": "^15.4.2",
     "react-dates": "^7.0.1",
     "react-dom": "^15.4.2",
-    "react-month-picker": "^1.1.3",
-    "react-toggle": "^3.0.0"
   }
 }
