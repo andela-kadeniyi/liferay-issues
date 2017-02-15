@@ -20,9 +20,10 @@ export default class Home extends React.Component {
     this.onFocusChange = this.onFocusChange.bind(this);
   }
   componentWillMount() {
-    fetch('https://api.github.com/repos/liferay/liferay-portal/issues').then(issues => {
-      return issues.json()
-    }).then(res => this.setState({issues: res}))
+    fetchGithubIssues.fetch()
+    .then(res => {
+      this.setState({issues: res})
+    })
   }
   onDatesChange({ startDate, endDate }) {
     this.setState({ startDate, endDate });
@@ -93,5 +94,18 @@ export default class Home extends React.Component {
         <ChartDisplay {...preparedDatapoints} />
       </div>
     )
+  }
+}
+
+export const fetchGithubIssues = {
+  fetch() {
+    return new Promise((resolve, reject)=> {
+      fetch('https://api.github.com/repos/liferay/liferay-portal/issues')
+      .then((res) => {
+          return res.json();
+      }).then((res) => {
+        resolve(res);
+      });
+    })
   }
 }
