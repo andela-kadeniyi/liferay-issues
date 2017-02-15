@@ -40,3 +40,13 @@ export default class ChartDisplay extends React.Component {
     )
   }
 }
+
+ChartDisplay.propTypes = {
+  labels: React.PropTypes.array.isRequired,
+  data: React.PropTypes.array.isRequired
+}
+
+ChartDisplay.defaultProps = {
+  labels: [],
+  data: []
+}
