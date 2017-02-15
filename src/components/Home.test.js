@@ -10,4 +10,8 @@ describe('Home', () => {
   it('contains the right text', () => {
     expect(wrapper.find('h1').text()).toEqual('Life Ray Issues')
   });
+
+  it('contains the right text', () => {
+    expect(wrapper.find('input').length).toEqual(3)
+  });
 });
